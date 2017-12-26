@@ -46,6 +46,6 @@
 
 const address = ['1299 S Juniper Street', 'Philadelphia', 'Pensylvania','19147'];
 
-const [street, city, state, zip] = address;
+const [, city, state,zip, complement='Sem complemento'] = address;
 
-console.log (`You are in ${city} state of ${state} `)
+console.log (`You are in ${city} state of ${state}  and these are the complements ${complement}`)
