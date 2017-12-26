@@ -24,13 +24,13 @@ const book = {
     title: 'Ego is the Enemy',
     author : 'Ryan Holiday',
     publisher :{
-        // name:'Penguin'
+        name:'Penguin'
     }
 };
 
-const {title, author, publisher} = book;
+// const {title, author, publisher} = book;
 
-const{name:publisherName = 'Self-Published'} = publisher;
+const{name:publisherName = 'Self-Published'} = book.publisher;
 
 console.log(publisherName);// If there is no name default value is Self-Published
 
