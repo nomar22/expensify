@@ -1,3 +1,7 @@
+///
+///Object Destructuring
+//
+
 // const person = {
 //     name: 'Rafael',
 //     age: 31,
@@ -20,17 +24,28 @@
 // }
 
 
-const book = {
-    title: 'Ego is the Enemy',
-    author : 'Ryan Holiday',
-    publisher :{
-        name:'Penguin'
-    }
-};
+// const book = {
+//     title: 'Ego is the Enemy',
+//     author : 'Ryan Holiday',
+//     publisher :{
+//         name:'Penguin'
+//     }
+// };
 
-// const {title, author, publisher} = book;
+// // const {title, author, publisher} = book;
 
-const{name:publisherName = 'Self-Published'} = book.publisher;
+// const{name:publisherName = 'Self-Published'} = book.publisher;
 
-console.log(publisherName);// If there is no name default value is Self-Published
+// console.log(publisherName);// If there is no name default value is Self-Published
 
+
+
+///
+// Array Destructuring
+//
+
+const address = ['1299 S Juniper Street', 'Philadelphia', 'Pensylvania','19147'];
+
+const [street, city, state, zip] = address;
+
+console.log (`You are in ${city} state of ${state} `)
