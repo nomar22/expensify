@@ -34,15 +34,15 @@ const removeExpense = ({ id } = {}) => ({
     id
 });
 
-const setTextFilter = (text) =>({
+//SET_TEXT_FILTER
+const setTextFilter = (text= '') =>({
     type: 'SET_TEXT_FILTER',
     text
 
 });
 
-//REMOVE_EXPENSE
-//EDIT_EXPENSE
-//SET_TEXT_FILTER
+
+
 //SORT_BY_DATE
 //SORT_BY_AMOUNT
 //SET_START_DATE
@@ -80,7 +80,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
 
 
 const filtersReducerDefaultState = {
-    name: '',
+    text: '',
     sortBy: 'date',// date or amount
     startDate: undefined,
     endDate: undefined
@@ -91,7 +91,7 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         case 'SET_TEXT_FILTER':
         return {
             ...state,
-            sortBy:action.text
+            text:action.text
 
         }
         default:
