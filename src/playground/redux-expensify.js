@@ -141,6 +141,19 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
     }
 }
 
+
+//GetVisible Expenses
+const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
+
+    return expenses.filter((expense) => {
+        const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
+        const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
+        const textMatch = true;
+
+        return startDateMatch && endDateMatch && textMatch;
+    });
+};
+
 //Store Creation
 
 const store = createStore(
@@ -151,12 +164,14 @@ const store = createStore(
 );
 
 store.subscribe(() => {
-    console.log(store.getState());
+    const state = store.getState();
+    const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+    console.log(visibleExpenses);
 
 });
 
-// const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100 }));
-// const expenseTwo = store.dispatch(addExpense({ description: 'Cofee', amount: 300 }));
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: 1000}));
+const expenseTwo = store.dispatch(addExpense({ description: 'Cofee', amount: 300, createdAt : -1000}));
 
 // store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
 // store.dispatch(editExpense(expenseOne.expense.id, { amount: 500 }))
@@ -166,11 +181,11 @@ store.subscribe(() => {
 // store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());
 
-store.dispatch(setStartDate(126));
-store.dispatch(setStartDate());
+// store.dispatch(setStartDate(126));
+// store.dispatch(setStartDate());
 
 store.dispatch(setEndDate(148));
-store.dispatch(setEndDate());
+// store.dispatch(setEndDate());
 
 const demoState = {
     expenses: [{
@@ -195,9 +210,9 @@ const user = {
     age: 24
 }
 
-console.log({
-    age: 22,
-    ...user,
-    location: 'filadelfia',
-    age: 23
-});
+// console.log({
+//     age: 22,
+//     ...user,
+//     location: 'filadelfia',
+//     age: 23
+// });
