@@ -151,6 +151,12 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
         const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
 
         return startDateMatch && endDateMatch && textMatch;
+    }).sort((a, b) => {
+        if (sortBy === 'date') {
+            return a.createdAt < b.createdAt ? 1 : -1;
+        } else {
+            return a.amount < b.amount ? -1 : 1;
+        }
     });
 };
 
@@ -170,15 +176,15 @@ store.subscribe(() => {
 
 });
 
-const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: 1000}));
-const expenseTwo = store.dispatch(addExpense({ description: 'Cofee', amount: 300, createdAt : -1000}));
+const expenseOne = store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: -11000 }));
+const expenseTwo = store.dispatch(addExpense({ description: 'Cofee', amount: 300, createdAt: -1000 }));
 
 // store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
 // store.dispatch(editExpense(expenseOne.expense.id, { amount: 500 }))
-store.dispatch(setTextFilter('CoFee'));
+// store.dispatch(setTextFilter('CoFee'));
 // store.dispatch(setTextFilter(''));
 
-// store.dispatch(sortByAmount());
+store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());
 
 // store.dispatch(setStartDate(126));
@@ -187,21 +193,21 @@ store.dispatch(setTextFilter('CoFee'));
 // store.dispatch(setEndDate(148));
 // store.dispatch(setEndDate());
 
-const demoState = {
-    expenses: [{
-        id: 'a1234',
-        description: 'January Rent',
-        note: 'This was the final pyament for that address',
-        amount: 54500,
-        createdAt: 0
-    }],
-    filters: {
-        text: 'rent',
-        sortBy: 'amount',// date or amount
-        startDate: undefined,
-        endDate: undefined
-    }
-};
+// const demoState = {
+//     expenses: [{
+//         id: 'a1234',
+//         description: 'January Rent',
+//         note: 'This was the final pyament for that address',
+//         amount: 54500,
+//         createdAt: 0
+//     }],
+//     filters: {
+//         text: 'rent',
+//         sortBy: 'amount',// date or amount
+//         startDate: undefined,
+//         endDate: undefined
+//     }
+// };
 
 
 
