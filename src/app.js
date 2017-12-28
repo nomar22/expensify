@@ -14,18 +14,18 @@ const store = configureStore();
 //addExpense -> gas bill
 //setText Filter-> bill(2 items)
 //getVisibleExpeses ->print visibles ones to scree
+store.dispatch(addExpense({ description: 'Water bill', amount: 100, createdAt: 1 }));
+store.dispatch(addExpense({ description: 'Gas bill', amount: 300, createdAt: 2 }));
+// store.dispatch(setTextFilter('bill'));
+store.dispatch(setTextFilter('water'));
 
-store.subscribe(() => {
+// store.subscribe(() => {
     const state = store.getState();
     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
     console.log(visibleExpenses);
 
-});
+// });
 
-store.dispatch(addExpense({ description: 'Water bill', amount: 100, createdAt: 1 }));
-store.dispatch(addExpense({ description: 'Gas bill', amount: 300, createdAt: 2 }));
-store.dispatch(setTextFilter('bill'));
-store.dispatch(setTextFilter('water'));
 
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'));
