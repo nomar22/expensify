@@ -10,12 +10,8 @@ const ExpenseList =  (props)=>(
         
         <ol>
             {
-                props.expenses.map((expense,index)=>(
-                    <ExpenseListItem 
-                        key={index}
-                        amount={expense.amount}
-                        createdAt={expense.createdAt}
-                        description = {expense.description}
+                props.expenses.map((expense)=>(
+                    <ExpenseListItem key={expense.id} {...expense}
                     />
                 ))
             }
