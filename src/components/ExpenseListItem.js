@@ -1,9 +1,10 @@
 import React from 'react';
 
 // description, amount, createdAt
-export default (props)=>(
+export default ({description, createdAt, amount})=>(
     <div>
-        This Expense Item
+        <h1>{description}</h1>
+        <p>{amount}</p>
     </div>
 );
 
