@@ -1,11 +1,22 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import ExpenseListItem from './ExpenseListItem'
 
 const ExpenseList =  (props)=>(
     <div> 
         <h1>ExpenseList</h1>
-       Filter used :  {props.filters.text} 
-        Size {props.expenses.length}
+        Size {props.expenses.length }
+        
+        <ol>
+            {
+                props.expenses.map((expense,index)=>(
+                    
+                    <ExpenseListItem 
+                        key={expense}
+                    />
+                ))
+            }
+        </ol>
     </div>
 );
 
