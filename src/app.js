@@ -24,9 +24,13 @@ store.dispatch(setTextFilter('water'));
 
 setTimeout(()=>{
 
+<<<<<<< HEAD
     store.dispatch(setTextFilter('rent'));
     
 
+=======
+    store.dispatch(setTextFilter('bil'));
+>>>>>>> b15397526a7ced225173e616dc8952bb3980550b
 
 }, 3000);
 
