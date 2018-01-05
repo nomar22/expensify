@@ -25,6 +25,8 @@ store.dispatch(setTextFilter('water'));
 setTimeout(()=>{
 
     store.dispatch(setTextFilter('rent'));
+    
+
 
 }, 3000);
 
