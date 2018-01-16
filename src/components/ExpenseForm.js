@@ -18,7 +18,8 @@ class ExpenseForm extends React.Component {
         note: '',
         amount: '',
         createdAt: moment(),
-        calendarFocused: false
+        calendarFocused: false,
+        error:''
     };
 
     onDescriptionChange = (e) => {
@@ -54,11 +55,13 @@ class ExpenseForm extends React.Component {
     onSubmit= (e)=>{
         e.preventDefault();
 
-        if(!this.state.description || this.state.amount){
+        if(!this.state.description || !this.state.amount){
             //Set Error state equal to 'Please Provide description and amount'
+            this.setState({error:'Please Provide description and amount'});
 
         } else{
             //clear The error
+            this.setState({error:''});
             console.log("Submmited");
         }
     };
@@ -69,6 +72,7 @@ class ExpenseForm extends React.Component {
 
         return (
             <div>
+                <p style={{color: 'red'}}>{this.state.error} </p>
                 <form onSubmit={this.onSubmit}>
                     <input
                         type="text"
