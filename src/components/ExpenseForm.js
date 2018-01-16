@@ -72,7 +72,7 @@ class ExpenseForm extends React.Component {
 
         return (
             <div>
-                <p style={{color: 'red'}}>{this.state.error} </p>
+                {this.state.error && <p style={{color: 'red'}}>{this.state.error} </p> }
                 <form onSubmit={this.onSubmit}>
                     <input
                         type="text"
