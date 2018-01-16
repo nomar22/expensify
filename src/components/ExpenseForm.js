@@ -36,7 +36,7 @@ class ExpenseForm extends React.Component {
     onAmountChange = (e) => {
         const amount = e.target.value;
 
-        if (!amount || amount.match(/^\d{1,}(\,\d{0,2})?$/)) {
+        if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
             this.setState({ amount });
 
         }
@@ -62,7 +62,12 @@ class ExpenseForm extends React.Component {
         } else{
             //clear The error
             this.setState({error:''});
-            console.log("Submmited");
+            this.props.onSubmit({
+                description:this.state.description,
+                amount:parseFloat(this.state.amount,10) * 100,
+                createdAt: this.state.createdAt.valueOf(),
+                note: this.state.note
+            });
         }
     };
 
