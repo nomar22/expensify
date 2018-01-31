@@ -4,10 +4,10 @@ import ExpenseForm from './expenseForm';
 
 //edit 
 const EditExpensePage = (props) => {
-    console.log(props);
     return (
         <div>
             <ExpenseForm
+                expense={props.expense}
                 onSubmit={(expense) =>{
                     console.log('udpated',expense)
                 }}
