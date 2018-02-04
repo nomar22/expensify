@@ -42,18 +42,19 @@ test('Should set generate sortByAmount action object',()=>{
 
 test('Should set generate setTextFilter action object',()=>{
     const action = setTextFilter('BILL');
-
+    const text = 'BILL';
     expect(action).toEqual({
         type:'SET_TEXT_FILTER',
-        text:'BILL'
+        text
     });
 });
 
 
 test('Should set generate setTextFilter action object with default value',()=>{
     const action = setTextFilter();
+    const text = '';
     expect(action).toEqual({
         type:'SET_TEXT_FILTER',
-        text:''
+        text
     });
 });
