@@ -21,6 +21,7 @@ const expenses = [{
     amount: 1500,
     createdAt: moment(0).add(3, 'days').valueOf()
 },
+
 {
     id: '4',
     description: 'gas',
