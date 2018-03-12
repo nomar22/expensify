@@ -4,6 +4,7 @@ import expenses from '../fixtures/expenses';
 test('should set default state ', ()=>{
     const state = expensesReducer(undefined,{type:'@@INIT'});
 
+
     expect (state).toEqual([]);
 });
 
@@ -27,7 +28,7 @@ test ('Should not remove if id not found',()=>{
 
     const state = expensesReducer(expenses,action);
 
-    expect(state).toEqual([expenses[0],expenses[1],expenses[2],expenses[3]]);
+    expect(state).toEqual(expenses);
 });
 
 // should add an expense
@@ -69,7 +70,7 @@ test ('Should edit an expense',()=>{
 
 //should not edit if expense not found
 
-test ('Should edit an expense',()=>{
+test ('Should not edit an expense',()=>{
     const action = {
         type:'EDIT_EXPENSE',
         id:'bla',
