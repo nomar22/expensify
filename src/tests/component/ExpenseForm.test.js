@@ -13,3 +13,38 @@ test('Should render ExpenseForm with expense data',()=>{
     const wrapper = shallow(<ExpenseForm expense={expenses[0]} />);
     expect(wrapper).toMatchSnapshot();
 });
+
+test('should render error for invalid form submission',()=>{
+    const wrapper = shallow(<ExpenseForm />);
+    wrapper.find('form').simulate('submit',{
+         preventDefault:()=>{}
+        });
+    expect(wrapper.state('error').length).toBeGreaterThan(0);
+    expect(wrapper).toMatchSnapshot();
+    
+});
+
+
+test('should set descritpion on input change',()=>{
+    const value = 'New Description';
+    const wrapper = shallow(<ExpenseForm />);
+    wrapper.find('input').at(0).simulate('change',{
+        target: {value}
+    });
+
+    expect(wrapper.state('description')).toBe(value);
+    expect(wrapper).toMatchSnapshot();
+});
+
+test('Should set note textChange', ()=>{
+    const value = 'Add Description';
+    const wrapper = shallow(<ExpenseForm />);
+
+    wrapper.find('textarea').at(0).simulate('change',{
+        target:{value}
+    });
+
+    expect(wrapper.state('note')).toBe(value);
+    expect(wrapper).toMatchSnapshot();
+
+});
