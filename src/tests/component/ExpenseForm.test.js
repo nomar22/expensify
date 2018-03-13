@@ -40,11 +40,37 @@ test('Should set note textChange', ()=>{
     const value = 'Add Description';
     const wrapper = shallow(<ExpenseForm />);
 
-    wrapper.find('textarea').at(0).simulate('change',{
+    wrapper.find('textarea').simulate('change',{
         target:{value}
     });
 
     expect(wrapper.state('note')).toBe(value);
+    expect(wrapper).toMatchSnapshot();
+
+});
+
+test('Should set valid amount', ()=>{
+    const value = "55.30";
+    const wrapper = shallow(<ExpenseForm />);
+
+    wrapper.find('input').at(1).simulate('change',{
+        target:{value}
+    });
+
+    expect(wrapper.state('amount')).toBe(value);
+    expect(wrapper).toMatchSnapshot();
+
+});
+
+test('Should reject invalid amount', ()=>{
+    const value = "55.3030";
+    const wrapper = shallow(<ExpenseForm />);
+
+    wrapper.find('input').at(1).simulate('change',{
+        target:{value}
+    });
+
+    expect(wrapper.state('amount')).toBe("");
     expect(wrapper).toMatchSnapshot();
 
 });
