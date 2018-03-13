@@ -2,13 +2,13 @@ import React from 'react';
 import ReactShallowRender from 'react-test-renderer/shallow';
 import Header from '../../components/Header';
 
-
+// 
 
 test('Should render Header correctly', ()=>{
-//     const renderer = new ReactShallowRender();
-//     renderer.render(<Header/>);
+    const renderer = new ReactShallowRender();
+    renderer.render(<Header/>);
 
-//     console.log(renderer.getRenderOutput());
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
 });
 
 
