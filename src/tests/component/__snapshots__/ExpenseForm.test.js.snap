@@ -213,6 +213,7 @@ exports[`Should render ExpenseForm with expense data 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add a note to your Expense (optional)"
+      value=""
     />
     <button>
       Add Expense 
