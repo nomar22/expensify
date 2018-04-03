@@ -29,9 +29,6 @@ test('Should render EditExpense correctly', () => {
 
 test('Should render edit', () => {
 
-
-
-
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1]);
 
     expect(history.push).toHaveBeenLastCalledWith('/');
@@ -40,13 +37,7 @@ test('Should render edit', () => {
 });
 
 test('Should render remove', () => {
-
-
-
-    wrapper.find('button').prop('onClick')(expenses[1]);
-
-
+    wrapper.find('button').simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/');
-
     expect(removeExpense).toHaveBeenLastCalledWith({id:expenses[1].id})
 });
