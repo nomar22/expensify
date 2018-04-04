@@ -28,19 +28,33 @@ test('Should render ExpenseListFilter correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('Should render ExpenseListFilter with alt data correctly', () => {
+    wrapper.setProps({
+        filters: altFilters
+    });
+    expect(wrapper).toMatchSnapshot();
+});
 
 
-test('Should render edit', () => {
-
-    // // wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1]);
-
-    // expect(history.push).toHaveBeenLastCalledWith('/');
-    // expect(editExpense).toHaveBeenLastCalledWith(expenses[1].id,expenses[1]);
+test('Should handle text change',()=>{
 
 });
 
-test('Should render remove', () => {
-    // wrapper.find('button').simulate('click');
-    // expect(history.push).toHaveBeenLastCalledWith('/');
-    // expect(removeExpense).toHaveBeenLastCalledWith({id:expenses[1].id})
+
+test('Should sort by date',()=>{
+
+});
+
+test('Should sort by amount',()=>{
+
+});
+
+test('Should handle date     change',()=>{
+
+});
+
+
+//state
+test('Should handle date focus on change',()=>{
+
 });
