@@ -16,6 +16,8 @@ beforeEach(() => {
     setStartDate = jest.fn();
     setEndDate = jest.fn();
     wrapper = shallow(<ExpenseListFilters
+         startDateId="startDateId"
+         endDateId="endDateId"
          filters={filters}
          setTextFilter={setTextFilters}
          sortByDate= {sortByDate}
@@ -39,7 +41,7 @@ test('Should render ExpenseListFilter with alt data correctly', () => {
 
 test('Should handle text change',()=>{
     const value = altFilters.date;
-    wrapper.find('input').at(0).simulate('change',{
+    wrapper.find('input').simulate('change',{
         target: {value}
     });
     expect(setTextFilters).toHaveBeenLastCalledWith(value);
@@ -69,14 +71,24 @@ test('Should sort by amount',()=>{
 });
 
 test('Should handle date  change',()=>{
-    const date = filters.date;
-     console.log(wrapper.find('withStyles(DateRangePicker)'))//.prop('onDateChange')(date,undefined);
-    // expect(setStartDate).toHaveBeenLastCalledWith(date);
+    const data = altFilters;
+     wrapper.find('withStyles(DateRangePicker)').simulate('datesChange',{
+        startDate:data.startDate, 
+        endDate:data.endDate
+         
+     })
+    expect(setStartDate).toHaveBeenLastCalledWith(data.startDate);
+    expect(setEndDate).toHaveBeenLastCalledWith(data.endDate);
 
 });
 
 
 //state
 test('Should handle date focus on change',()=>{
+    wrapper.find('withStyles(DateRangePicker)').simulate('focusChange',{
+        calendarFocused:true
+    });
+    expect(wrapper.state('calendarFocused')).toMatchObject({calendarFocused:true})
+
 
 });
