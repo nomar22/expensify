@@ -88,10 +88,12 @@ test('Should handle date  change', () => {
 
 //state
 test('Should handle date focus on change', () => {
-    wrapper.find('withStyles(DateRangePicker)').simulate('focusChange', {
-        calendarFocused: true
-    });
-    expect(wrapper.state('calendarFocused')).toMatchObject({ calendarFocused: true })
+    const calendarFocused = 'endDate';
+    // wrapper.find('withStyles(DateRangePicker)').simulate('focusChange', {
+    //     calendarFocused: true
+    // });
+    wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarFocused)
+    expect(wrapper.state('calendarFocused')).toBe(calendarFocused )
 
 
 });
