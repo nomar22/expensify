@@ -12,22 +12,6 @@ import 'react-dates/lib/css/_datepicker.css';
 
 const store = configureStore();
 
-//addExpense -> water bill
-//addExpense -> gas bill
-//setText Filter-> bill(2 items)
-//getVisibleExpeses ->print visibles ones to scree
-store.dispatch(addExpense({ description: 'Water bill', amount: 100, createdAt: 1 }));
-store.dispatch(addExpense({ description: 'Gas bill', amount: 5, createdAt: 10000 }));
-store.dispatch(addExpense({ description: 'Internet bill', amount: 150, createdAt: 2 }));
-// store.dispatch(setTextFilter('bill'));
-store.dispatch(setTextFilter(''));
-
-
-
-// store.subscribe(() => {
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
 
 // });
 
