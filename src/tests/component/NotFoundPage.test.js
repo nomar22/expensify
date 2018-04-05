@@ -6,7 +6,7 @@ import NotFoundPage from '../../components/NotFoundPage';
 
 test('Should render NotFound Page ',()=>{
     const wrapper = shallow(<NotFoundPage />);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot(); 
 });
 
 
