@@ -16,14 +16,14 @@ beforeEach(() => {
     setStartDate = jest.fn();
     setEndDate = jest.fn();
     wrapper = shallow(<ExpenseListFilters
-         startDateId="startDateId"
-         endDateId="endDateId"
-         filters={filters}
-         setTextFilter={setTextFilters}
-         sortByDate= {sortByDate}
-         sortByAmount ={sortByAmount}
-         setStartDate={setStartDate}
-         setEndDate= {setEndDate}/>);
+        startDateId="startDateId"
+        endDateId="endDateId"
+        filters={filters}
+        setTextFilter={setTextFilters}
+        sortByDate={sortByDate}
+        sortByAmount={sortByAmount}
+        setStartDate={setStartDate}
+        setEndDate={setEndDate} />);
 });
 
 test('Should render ExpenseListFilter correctly', () => {
@@ -39,20 +39,20 @@ test('Should render ExpenseListFilter with alt data correctly', () => {
 });
 
 
-test('Should handle text change',()=>{
+test('Should handle text change', () => {
     const value = altFilters.date;
-    wrapper.find('input').simulate('change',{
-        target: {value}
+    wrapper.find('input').simulate('change', {
+        target: { value }
     });
     expect(setTextFilters).toHaveBeenLastCalledWith(value);
 
 });
 
 
-test('Should sort by date',()=>{
+test('Should sort by date', () => {
     const sortBy = filters.sortBy;
     wrapper.find('select').simulate('change', {
-        target:{value: sortBy}
+        target: { value: sortBy }
     });
 
     expect(sortByDate).toHaveBeenCalled();
@@ -60,23 +60,26 @@ test('Should sort by date',()=>{
 
 });
 
-test('Should sort by amount',()=>{
-   const sortBy = altFilters.sortBy;
+test('Should sort by amount', () => {
+    const sortBy = altFilters.sortBy;
     wrapper.find('select').simulate('change', {
-        target:{value: sortBy}
+        target: { value: sortBy }
     });
 
     expect(sortByAmount).toHaveBeenCalled();
-    
+
 });
 
-test('Should handle date  change',()=>{
+test('Should handle date  change', () => {
     const data = altFilters;
-     wrapper.find('withStyles(DateRangePicker)').simulate('datesChange',{
-        startDate:data.startDate, 
-        endDate:data.endDate
-         
-     })
+    const startDate = altFilters.startDate;
+    const endDate = altFilters.endDate;
+    //  wrapper.find('withStyles(DateRangePicker)').simulate('datesChange',{
+    //     startDate:data.startDate, 
+    //     endDate:data.endDate
+
+    //  })
+    wrapper.find('withStyles(DateRangePicker)').prop('onDatesChange')({ startDate, endDate })
     expect(setStartDate).toHaveBeenLastCalledWith(data.startDate);
     expect(setEndDate).toHaveBeenLastCalledWith(data.endDate);
 
@@ -84,11 +87,11 @@ test('Should handle date  change',()=>{
 
 
 //state
-test('Should handle date focus on change',()=>{
-    wrapper.find('withStyles(DateRangePicker)').simulate('focusChange',{
-        calendarFocused:true
+test('Should handle date focus on change', () => {
+    wrapper.find('withStyles(DateRangePicker)').simulate('focusChange', {
+        calendarFocused: true
     });
-    expect(wrapper.state('calendarFocused')).toMatchObject({calendarFocused:true})
+    expect(wrapper.state('calendarFocused')).toMatchObject({ calendarFocused: true })
 
 
 });
