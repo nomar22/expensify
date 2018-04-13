@@ -5,6 +5,9 @@
   "repository": "https://github.com/nomar22/expensify-app.git",
   "author": "EgidioRR",
   "license": "MIT",
+  "engines": {
+    "node":"8.10.0"
+  },
   "scripts": {
     "serve": "live-server public/",
     "build:dev": "webpack",
