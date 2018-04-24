@@ -11,15 +11,9 @@ test('Should return 0 if no expenses', ()=>{
 });
 
 test('Should return correctly with a single expense', ()=>{
-    const emptyExpenses  = [
-        { id: '1',
-        description: 'gun',
-        note: '',
-        amount: 150,
-        createdAt: 1}
-    ];
+   
 
-    const result = selectExpensesTotal(emptyExpenses);
+    const result = selectExpensesTotal([expenses[0]]);
 
     expect(result).toBe(150);
     
