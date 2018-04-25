@@ -13,6 +13,17 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+// database.ref('isSingle').remove().then(() => {
+//     console.log('isSingle removed');
+// }).catch((e) => {
+//     console.log('Fail on remove property', e);
+// });
+
+// database.ref('age').remove().then(() => {
+//     console.log('age removed');
+// }).catch((e) => {
+//     console.log('Fail on remove property', e);
+// });
 database.ref().set({
     name: 'Rafael Egidio',
     age: 32,
@@ -35,16 +46,16 @@ database.ref().set({
 // database.ref('location/city').set('Belo Horizonte');
 
 
-database.ref('attributes').set({
-    height: 185,
-    weight: 92,
-    hairCollor: 'black',
-    ethnicity: 'latin'
-}).then(()=>{
-    console.log('Data is saved');
-}).catch((e) => {
-    console.log('Failed for the second one', e);
+// database.ref('attributes').set({
+//     height: 185,
+//     weight: 92,
+//     hairCollor: 'black',
+//     ethnicity: 'latin'
+// }).then(()=>{
+//     console.log('Data is saved');
+// }).catch((e) => {
+//     console.log('Failed for the second one', e);
 
-});
+// });
 
 // console.log('I made a request to change the data.');
