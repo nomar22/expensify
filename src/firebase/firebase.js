@@ -21,19 +21,30 @@ database.ref().set({
         city: 'Contagem',
         country: 'Brasil'
     }
+}).then(() => {
+    console.log('Data is saved');
+}).catch((e) => {
+    console.log('This is failed', e);
 });
 
 //   database.ref().set('this is my data');
 
-database.ref('age').set(33);
+// database.ref('age').set(33);
 
 
-database.ref('location/city').set('Belo Horizonte');
+// database.ref('location/city').set('Belo Horizonte');
+
+
 database.ref('attributes').set({
     height: 185,
     weight: 92,
     hairCollor: 'black',
     ethnicity: 'latin'
+}).then(()=>{
+    console.log('Data is saved');
+}).catch((e) => {
+    console.log('Failed for the second one', e);
+
 });
 
-console.log('I made a request to change the data.');
+// console.log('I made a request to change the data.');
