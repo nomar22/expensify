@@ -8,7 +8,7 @@ exports[`Should render ExpensesSumary with 0 expenses  1`] = `
 
 exports[`Should render ExpensesSumary with one expense  1`] = `
 <div>
-  <p>
+  <h1>
      Viewing 
     1
      
@@ -16,13 +16,13 @@ exports[`Should render ExpensesSumary with one expense  1`] = `
      totaling 
     $1.50
      
-  </p>
+  </h1>
 </div>
 `;
 
 exports[`Should render ExpensesSumary with some expenses  1`] = `
 <div>
-  <p>
+  <h1>
      Viewing 
     4
      
@@ -30,6 +30,6 @@ exports[`Should render ExpensesSumary with some expenses  1`] = `
      totaling 
     $17.80
      
-  </p>
+  </h1>
 </div>
 `;

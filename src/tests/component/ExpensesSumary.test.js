@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow} from 'enzyme'; 
 import {ExpensesSumary} from '../../components/ExpensesSumary';
 import expenses from '../fixtures/expenses'
 
