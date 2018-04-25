@@ -10,9 +10,8 @@ exports[`Should render ExpensesSumary with one expense  1`] = `
 <div>
   <h1>
      Viewing 
-    1
      
-    expense
+    expenses
      totaling 
     $1.50
      
