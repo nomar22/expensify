@@ -7,11 +7,33 @@ const config = {
     projectId: "expensify-a7f29",
     storageBucket: "expensify-a7f29.appspot.com",
     messagingSenderId: "720397182129"
-  };
+};
 
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
-  firebase.database().ref().set({
-      name:'Rafael Egidio'
-  });
+const database = firebase.database();
 
+database.ref().set({
+    name: 'Rafael Egidio',
+    age: 32,
+    isSingle: false,
+    location: {
+        city: 'Contagem',
+        country: 'Brasil'
+    }
+});
+
+//   database.ref().set('this is my data');
+
+database.ref('age').set(33);
+
+
+database.ref('location/city').set('Belo Horizonte');
+database.ref('attributes').set({
+    height: 185,
+    weight: 92,
+    hairCollor: 'black',
+    ethnicity: 'latin'
+});
+
+console.log('I made a request to change the data.');
