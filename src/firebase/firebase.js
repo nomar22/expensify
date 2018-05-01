@@ -13,47 +13,70 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-// database.ref('isSingle').remove().then(() => {
-//     console.log('isSingle removed');
-// }).catch((e) => {
-//     console.log('Fail on remove property', e);
-// });
 
-// database.ref('age').remove().then(() => {
-//     console.log('age removed');
-// }).catch((e) => {
-//     console.log('Fail on remove property', e);
-// });
-database.ref().set({
-    name: 'Rafael Egidio',
-    age: 32,
-    stressLevel:3,
-    isSingle: false,
-    job:{
-        title:'Software developer',
-        company:'Unisys'
-    },
-    location: {
-        city: 'Contagem',
-        country: 'Brasil'
-    }
-}).then(() => {
-    console.log('Data is saved');
-}).catch((e) => {
-    console.log('This is failed', e);
+// Setup data subscr -> Rafael is a Softwa at Amazon
+//Change the data and make sure it reprints
+
+const onValueChange = database.ref().on('value', (snapshot) => {
+    const job = snapshot.val().job;
+    console.log(`${snapshot.val().name}  is a  , ${job.title}, at , ${job.company}`);
+}, (e) => {
+    console.log("Problem on obtain data");
 });
 
 
-database.ref().update({
-    stressLevel: 7,
-    'job/company': 'Lisbon',
-    location:{
-        city:'Lisbon',
-        country: 'Portugal'
-    }
-}).then(()=>{
-    console.log('Data is updated')
-});
+// console.log(database.ref().
+// once('value')
+// .then((data)=>{
+//     const val = data.val();
+
+//     console.log(val);
+
+// }).catch((e)=>{
+//     console.log('Problem on fetching data', e);
+// }));
+
+// // database.ref('isSingle').remove().then(() => {
+// //     console.log('isSingle removed');
+// // }).catch((e) => {
+// //     console.log('Fail on remove property', e);
+// // });
+
+// // database.ref('age').remove().then(() => {
+// //     console.log('age removed');
+// // }).catch((e) => {
+// //     console.log('Fail on remove property', e);
+// // });
+// database.ref().set({
+//     name: 'Rafael Egidio',
+//     age: 32,
+//     stressLevel:3,
+//     isSingle: false,
+//     job:{
+//         title:'Software developer',
+//         company:'Unisys'
+//     },
+//     location: {
+//         city: 'Contagem',
+//         country: 'Brasil'
+//     }
+// }).then(() => {
+//     console.log('Data is saved');
+// }).catch((e) => {
+//     console.log('This is failed', e);
+// });
+
+
+// database.ref().update({
+//     stressLevel: 7,
+//     'job/company': 'Lisbon',
+//     location:{
+//         city:'Lisbon',
+//         country: 'Portugal'
+//     }
+// }).then(()=>{
+//     console.log('Data is updated')
+// });
 
 //   database.ref().set('this is my data');
 
