@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import expenses from '../tests/fixtures/expenses'
 
 const config = {
     apiKey: "AIzaSyCZf1W7_fIaxnkTeRLDiKkPmDfYxMpShi8",
@@ -13,17 +14,75 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-
-// Setup data subscr -> Rafael is a Softwa at Amazon
-//Change the data and make sure it reprints
-
-const onValueChange = database.ref().on('value', (snapshot) => {
-    const job = snapshot.val().job;
-    console.log(`${snapshot.val().name}  is a  , ${job.title}, at , ${job.company}`);
-}, (e) => {
-    console.log("Problem on obtain data");
+//child_removed
+database.ref('expenses').on('child_removed',(snapshot)=>{
+    console.log(snapshot.key, snapshot.val())
 });
 
+
+//child_changed
+database.ref('expenses').on('child_changed',(snapshot)=>{
+    console.log('The new value is', snapshot.val());
+});
+
+//child_added
+database.ref('expenses').on('child_added',(snapshot)=>{
+    console.log('The value is', snapshot.val());
+});
+// database.ref('expenses')
+// .once('value')
+// .then((snapshot)=>{
+//     const expenses = [];
+
+//     snapshot.forEach(element => {
+//         expenses.push({
+//             id:element.key,
+//             ...element.val()
+//         });
+//     });
+
+//     console.log(expenses);
+// });
+
+// database.ref('expenses').on('value', (snapshot)=>{
+//     const expenses = [];
+
+//         snapshot.forEach(element => {
+//             expenses.push({
+//                 id:element.key,
+//                 ...element.val()
+//             });
+//         });
+    
+//         console.log(expenses);
+
+
+// });
+
+
+// database.ref('expenses').push(expenses[0]);
+// database.ref('expenses').push(expenses[1]);
+database.ref('expenses').push(expenses[2]);
+// database.ref('expenses').push('expenses[2]');
+
+
+
+
+
+
+
+
+
+
+// database.ref('notes/-LBSV8SmrNp4ba5ycRH0').remove();
+
+
+// database.ref('notes').push({
+//     title:'Course topics',
+//     body: 'React Native, Angular, Python '
+// });
+
+//
 
 // console.log(database.ref().
 // once('value')
