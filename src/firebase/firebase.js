@@ -14,21 +14,23 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-//child_removed
-database.ref('expenses').on('child_removed',(snapshot)=>{
-    console.log(snapshot.key, snapshot.val())
-});
+export {firebase, database as default };
+
+// //child_removed
+// database.ref('expenses').on('child_removed',(snapshot)=>{
+//     console.log(snapshot.key, snapshot.val())
+// });
 
 
-//child_changed
-database.ref('expenses').on('child_changed',(snapshot)=>{
-    console.log('The new value is', snapshot.val());
-});
+// //child_changed
+// database.ref('expenses').on('child_changed',(snapshot)=>{
+//     console.log('The new value is', snapshot.val());
+// });
 
-//child_added
-database.ref('expenses').on('child_added',(snapshot)=>{
-    console.log('The value is', snapshot.val());
-});
+// //child_added
+// database.ref('expenses').on('child_added',(snapshot)=>{
+//     console.log('The value is', snapshot.val());
+// });
 // database.ref('expenses')
 // .once('value')
 // .then((snapshot)=>{
@@ -62,7 +64,7 @@ database.ref('expenses').on('child_added',(snapshot)=>{
 
 // database.ref('expenses').push(expenses[0]);
 // database.ref('expenses').push(expenses[1]);
-database.ref('expenses').push(expenses[2]);
+// database.ref('expenses').push(expenses[2]);
 // database.ref('expenses').push('expenses[2]');
 
 
