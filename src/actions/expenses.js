@@ -53,9 +53,45 @@ export const removeExpense = ({ id } = {}) => ({
     id
 });
 
+// database.ref('expenses').on('value', (snapshot)=>{
+//     const expenses = [];
+
+//         snapshot.forEach(element => {
+//             expenses.push({
+//                 id:element.key,
+//                 ...element.val()
+//             });
+//         });
+    
+//         console.log(expenses);
+
+
+// });
+export const startSetExpenses = ()=>{
+    return (dispatch)=>{
+        return database.ref('expenses').once('value').then((snapshot)=>{
+            console.log('73')
+            const expenses = [];
+            snapshot.forEach(element =>{
+                expenses.push({
+                    id: element.key,
+                    ...element.val()
+                });
+            });
+            console.log(expenses);
+            dispatch(setExpenses(expenses));
+
+        } );
+    };
+};
 
 export const setExpenses = (expenses)=>({
     type:'SET_EXPENSES',
     expenses
 });
 
+
+
+// 1. Fetch all expense data once
+// 2 . Parse data into an array as the firebase.js
+// 3 . dispatch SET_EXPENSES
