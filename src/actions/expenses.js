@@ -27,9 +27,9 @@ export const startAddExpense = (expenseData = {}) => {
             createdAt = 0
         } = expenseData;
 
-        const expense = {description,note, amount, createdAt};
+        const expense = { description, note, amount, createdAt };
 
-        return database.ref('expenses').push(expense).then((ref)=>{
+        return database.ref('expenses').push(expense).then((ref) => {
             dispatch(addExpense({
                 id: ref.key,
                 ...expense
@@ -39,6 +39,20 @@ export const startAddExpense = (expenseData = {}) => {
     };
 };
 
+// startRemoveExpense
+// test startRemoveExpense 
+// use it on editexpensePage
+//  adjust editExpensePage test
+// database.ref('notes/-LBSV8SmrNp4ba5ycRH0').remove();
+export const startRemoveExpense = ({ id } = {}) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).remove().then(() => {
+            console.log('remove dispatched');
+            dispatch(removeExpense({id}));
+
+        });
+    };
+};
 //EDIT Expense
 
 export const editExpense = (id, updates) => ({
@@ -62,36 +76,29 @@ export const removeExpense = ({ id } = {}) => ({
 //                 ...element.val()
 //             });
 //         });
-    
+
 //         console.log(expenses);
 
 
 // });
-export const startSetExpenses = ()=>{
-    return (dispatch)=>{
-        return database.ref('expenses').once('value').then((snapshot)=>{
-            console.log('73')
+export const startSetExpenses = () => {
+    return (dispatch) => {
+        return database.ref('expenses').once('value').then((snapshot) => {
             const expenses = [];
-            snapshot.forEach(element =>{
+            snapshot.forEach(element => {
                 expenses.push({
                     id: element.key,
                     ...element.val()
                 });
             });
-            console.log(expenses);
             dispatch(setExpenses(expenses));
 
-        } );
+        });
     };
 };
 
-export const setExpenses = (expenses)=>({
-    type:'SET_EXPENSES',
+export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
     expenses
 });
 
-
-
-// 1. Fetch all expense data once
-// 2 . Parse data into an array as the firebase.js
-// 3 . dispatch SET_EXPENSES
