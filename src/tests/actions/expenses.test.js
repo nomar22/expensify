@@ -161,15 +161,22 @@ test('should fetch expenses from firebases', () => {
     // });
 });
 
-test('should setup edit Expense from firebase', () => {
+test('should setup edit Expense from firebase', (done) => {
     const store = creatMockStore({});
-    store.dispatch(startEditExpense('45', { note: '45' })).then(() => {
+    const id = expenses[0].id;
+    const updates = {amount:expenses[0].amount, note: expenses[0].note};
+    store.dispatch(startEditExpense(id,updates)).then(() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
             type: 'EDIT_EXPENSE',
-            id: '45',
-            updates: { note: '45' }
+            id,
+            updates
         });
+        return database.ref(`expenses/${id}`).once('value');
+        
 
+    }).then((snapshot)=>{
+        expect(snapshot.val().amount).toBe(updates.amount);
+        done();
     });
 });
