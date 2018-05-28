@@ -5,7 +5,7 @@ import { ExpenseDashBoardPage } from '../components/ExpenseDashBoardPage';
 //help
 export const NotFoundPage = () => (
     <div>
-        404 = <Link to="/" >Go home </Link>
+        404 = <Link to="/dashboard" >Go home </Link>
     </div>
 );
 
