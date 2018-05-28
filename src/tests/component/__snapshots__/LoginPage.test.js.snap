@@ -5,15 +5,6 @@ exports[`Should render LoginPage correctly 1`] = `
   <h1>
     Login
   </h1>
-  <input
-    autoFocus={true}
-    placeholder="login"
-    type="text"
-  />
-  <input
-    placeholder="password"
-    type="text"
-  />
   <button>
     Login
   </button>
