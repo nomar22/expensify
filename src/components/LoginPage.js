@@ -1,32 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { startLogin } from '../actions/auth';
 
 
 
 
 
 
-export class LoginPage extends React.Component {
+export const LoginPage = ({ startLogin }) => (
+        <div>
+            <h1>Login</h1>
+            <button onClick={startLogin}  >Login</button>
+        </div>
+    );
+const mapDispatchToProps = (dispatch) => ({
+    startLogin: () => dispatch(startLogin())
+});
 
-    render() {
-        return (
-            <div>
-                <h1>Login</h1>
-
-                <input
-                    type="text"
-                    placeholder="login"
-                    autoFocus />
-                <input
-                    type="text"
-                    placeholder="password"
-                />
-                <button  >Login</button>
-            </div>
-        )
-
-    }
-}
-
-export default LoginPage;
+export default connect(undefined, mapDispatchToProps)(LoginPage);
