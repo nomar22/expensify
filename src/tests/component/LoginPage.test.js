@@ -15,7 +15,7 @@ test('Should render LoginPage correctly', ()=>{
     expect(wrapper).toMatchSnapshot();
 });
 
-test('Should call startlogin on click',()=>{
+test('Should call startlogin on button click',()=>{
     wrapper.find('button').simulate('click');
     expect(startLogin).toHaveBeenCalled();
 });
