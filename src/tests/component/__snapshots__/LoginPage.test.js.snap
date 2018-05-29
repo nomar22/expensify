@@ -5,7 +5,9 @@ exports[`Should render LoginPage correctly 1`] = `
   <h1>
     Login
   </h1>
-  <button>
+  <button
+    onClick={[Function]}
+  >
     Login
   </button>
 </div>
