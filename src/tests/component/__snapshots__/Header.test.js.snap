@@ -17,14 +17,7 @@ exports[`Should render Header correctly 1`] = `
     ariaCurrent="true"
     to="/create"
   >
-     Criar /
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    ariaCurrent="true"
-    to="/help"
-  >
-     Ajuda
+     Criar 
   </NavLink>
   <button
     onClick={[Function]}

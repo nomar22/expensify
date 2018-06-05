@@ -46,8 +46,9 @@ export const startAddExpense = (expenseData = {}) => {
 //  adjust editExpensePage test
 // database.ref('notes/-LBSV8SmrNp4ba5ycRH0').remove();
 export const startRemoveExpense = ({ id } = {}) => {
-    return (dispatch) => {
-        return database.ref(`expenses/${id}`).remove().then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses/${id}`).remove().then(() => {
             dispatch(removeExpense({id}));
 
         });
@@ -62,8 +63,9 @@ export const editExpense = (id, updates) => ({
 });
 
 export const startEditExpense = (id,updates)=>{
-    return(dispatch)=>{
-        return database.ref(`expenses/${id}`).update(
+    return(dispatch,getState)=>{
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses/${id}`).update(
             updates
         ).then(()=>{
             

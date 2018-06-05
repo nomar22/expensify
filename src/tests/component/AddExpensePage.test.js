@@ -22,7 +22,7 @@ test('Should render onSubmit',()=>{
 
 
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1]);
-    expect(history.push).toHaveBeenLastCalledWith('/');
+    expect(history.push).toHaveBeenLastCalledWith('/dashboard');
     expect(startAddExpense).toHaveBeenCalledWith(expenses[1]);
 
 });
