@@ -1,21 +1,20 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import { LoginPage } from '../../components/LoginPage';
-import { wrap } from 'module';
 
 // // 
 
 let startLogin, wrapper;
-beforeEach(()=>{
+beforeEach(() => {
     startLogin = jest.fn();
-    wrapper = shallow(<LoginPage startLogin={startLogin}/>);
+    wrapper = shallow(<LoginPage startLogin={startLogin} />);
 });
 
-test('Should render LoginPage correctly', ()=>{
+test('Should render LoginPage correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('Should call startlogin on button click',()=>{
+test('Should call startlogin on button click', () => {
     wrapper.find('button').simulate('click');
     expect(startLogin).toHaveBeenCalled();
 });
