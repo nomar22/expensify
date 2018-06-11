@@ -80,6 +80,7 @@ test('Should setup add expense action with provided properties', () => {
 
 });
 
+
 test('should add expense to database and store', (done) => {
 
     const store = creatMockStore(defaultAuthState);
@@ -98,7 +99,7 @@ test('should add expense to database and store', (done) => {
                 ...expenseData
             }
         });
-        return database.ref(`users/${uid}/  expenses/${actions[0].expense.id}`).once('value');
+        return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once('value');
 
 
     }).then((snapshot) => {
