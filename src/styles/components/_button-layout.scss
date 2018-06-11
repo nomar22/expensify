@@ -16,7 +16,7 @@
 
 }
 
-.button-remove{
+.button--secondary{
     @extend .button-layout;
     background-color: $red;
 }
