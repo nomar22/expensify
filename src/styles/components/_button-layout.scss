@@ -15,3 +15,8 @@
     
 
 }
+
+.button-remove{
+    @extend .button-layout;
+    background-color: $red;
+}

@@ -16,12 +16,15 @@ export class EditExpensePage extends React.Component {
     };
     render() {
         return (
-            <div>
+            <div className="input-group">
                 <ExpenseForm
                     expense={this.props.expense}
                     onSubmit={this.onSubmit}
                 />
-                <button onClick={this.onRemove} >Remove</button>
+                <div className="input-group__item">
+                    <button className="button-remove" onClick={this.onRemove} >Remove</button>
+                </div>
+
             </div>);
     };
 };
