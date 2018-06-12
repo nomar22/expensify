@@ -5,7 +5,7 @@ import totalExpenses from '../selectors/expenses-total';
 import numeral from 'numeral';
 import {Link} from 'react-router-dom';
 
-export const ExpensesSumary = ({ expenseCount, expenseTotal }) => {
+export const ExpensesSumary = ({ expenseCount, expenseTotal, leftExpenses }) => {
     const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
     const formattedTotal = numeral(expenseTotal / 100).format('$0,0.00');
     return (
@@ -13,7 +13,7 @@ export const ExpensesSumary = ({ expenseCount, expenseTotal }) => {
             <div className="content-container">
                 {
                         (<div>
-                            <h1 className="page-header__title"> Viewing <span>{expenseCount}</span> {expenseWord} totaling <span>{formattedTotal} </span></h1>
+                            <h1 className="page-header__title"> Viewing <span>{expenseCount}</span> of {leftExpenses} {expenseWord} totaling <span>{formattedTotal} </span></h1>
                             <div className="page-header__actions">
                                 <Link className="button-layout" to="create">Add Expense </Link>
                             </div>
@@ -27,11 +27,12 @@ export const ExpensesSumary = ({ expenseCount, expenseTotal }) => {
     );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { 
     const expenses = selectExpenses(state.expenses, state.filters);
     return {
         expenseCount: expenses.length,
-        expenseTotal: totalExpenses(expenses)
+        expenseTotal: totalExpenses(expenses),
+        leftExpenses: state.expenses.length
     }
 }
 

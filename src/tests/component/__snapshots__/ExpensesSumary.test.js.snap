@@ -15,6 +15,7 @@ exports[`Should render ExpensesSumary with 0 expenses  1`] = `
         <span>
           0
         </span>
+         of 
          
         expenses
          totaling 
@@ -52,6 +53,7 @@ exports[`Should render ExpensesSumary with one expense  1`] = `
       >
          Viewing 
         <span />
+         of 
          
         expenses
          totaling 
@@ -91,6 +93,7 @@ exports[`Should render ExpensesSumary with some expenses  1`] = `
         <span>
           4
         </span>
+         of 
          
         expenses
          totaling 
