@@ -2,6 +2,7 @@ import 'react-dates/initialize';
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
+import CurrencyInput from 'react-currency-input';
 
 //normal Javascript date
 // const date = new Date();
@@ -37,13 +38,8 @@ class ExpenseForm extends React.Component {
 
         this.setState({ note });
     };
-    onAmountChange = (e) => {
-        const amount = e.target.value;
-
-        if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
-            this.setState({ amount });
-
-        }
+    onAmountChange = (e, maskedvalue, floatvalue) => {
+        this.setState({ amount: floatvalue });
     }
 
     onDateChange = (createdAt) => {
@@ -85,7 +81,6 @@ class ExpenseForm extends React.Component {
 
             <form className="form" onSubmit={this.onSubmit}>
                 {this.state.error && <p className="form_error" style={{ color: 'red' }}>{this.state.error} </p>}
-
                 <input className="text-input"
                     type="text"
                     placeholder="Description"
@@ -93,13 +88,11 @@ class ExpenseForm extends React.Component {
                     onChange={this.onDescriptionChange}
                     autoFocus />
 
-                <input
+                <CurrencyInput
                     className="text-input"
-                    type="text"
-                    placeholder="Amount"
+                    prefix="U$ "
                     value={this.state.amount}
-                    onChange={this.onAmountChange}
-                />
+                    onChangeEvent={this.onAmountChange} />
 
                 <SingleDatePicker
                     date={this.state.createdAt}
