@@ -22,14 +22,18 @@ class ExpenseForm extends React.Component {
             amount: props.expense ? (props.expense.amount / 100).toString() : '',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calendarFocused: false,
+            category: props.expense ? props.expense.category : undefined,
             error: ''
         };
     }
 
+    onCategoryChange = (e) => {
+        const category = e.target.value;
+        this.setState(() => ({ category }));
+    };
 
     onDescriptionChange = (e) => {
         const description = e.target.value;
-
         this.setState(() => ({ description }));
     };
     onNoteChange = (e) => {
@@ -55,19 +59,18 @@ class ExpenseForm extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-
-        if (!this.state.description || !this.state.amount) {
+        if (!this.state.description || !this.state.amount || !this.state.category) {
             //Set Error state equal to 'Please Provide description and amount'
-            this.setState({ error: 'Please Provide description and amount' });
+            this.setState({ error: 'Please Provide description, amount and category' });
 
         } else {
-            //clear The error
             this.setState({ error: '' });
             this.props.onSubmit({
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(),
-                note: this.state.note
+                note: this.state.note,
+                category: this.state.category
             });
         }
     };
@@ -93,6 +96,21 @@ class ExpenseForm extends React.Component {
                     prefix="U$ "
                     value={this.state.amount}
                     onChangeEvent={this.onAmountChange} />
+
+                <select className="select" value={this.state.category} onChange={this.onCategoryChange}>
+                    <option value=""  >Category</option>
+                    <option value="almoco">Almoço</option>
+                    <option value="bar">Bar</option>
+                    <option value="carro">Carro</option>
+                    <option value="celular">Celular</option>
+                    <option value="diversao">Diversão</option>
+                    <option value="esportes">Esportes</option>
+                    <option value="fast-food">Fast food</option>
+                    <option value="gasolina">Gasolina</option>
+                    <option value="lanche">Lanche</option>
+                    <option value="presente">Presente</option>
+                    <option value="viagens">Viagens</option>
+                </select>
 
                 <SingleDatePicker
                     date={this.state.createdAt}

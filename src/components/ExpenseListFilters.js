@@ -1,7 +1,7 @@
 import 'react-dates/initialize';
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTextFilter, sortByDate, sortByAmount, setStartDate, endDate, setEndDate } from '../actions/filters'
+import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, setCategoryFilter } from '../actions/filters'
 import { DateRangePicker } from 'react-dates';
 // import { start } from 'repl';
 
@@ -24,6 +24,11 @@ export class ExpenseListFilters extends React.Component {
         e.target.value === 'date' ? this.props.sortByDate() : this.props.sortByAmount();
     };
 
+    onCategoryChange = (e) => {
+        console.log(e.target.value)
+        this.props.setCategoryFilter(e.target.value);
+    }
+
     onTextChange = (e) => {
         this.props.setTextFilter(e.target.value);
     };
@@ -40,10 +45,27 @@ export class ExpenseListFilters extends React.Component {
                             onChange={this.onTextChange} />
                     </div>
                     <div className="input-group__item">
-                     <select className="select" onChange={this.onSortChange}>
-                        <option value="date">Date</option>
-                        <option value="amount">Amount</option>
-                    </select></div>
+                        <select className="select" onChange={this.onSortChange}>
+                            <option value="date">Date</option>
+                            <option value="amount">Amount</option>
+                        </select></div>
+                    <div className="input-group__item">
+                        <select className="select" value={this.props.filters.category} onChange={this.onCategoryChange}>
+                            <option value="" >Category</option>
+                            <option value="almoco">Almoço</option>
+                            <option value="bar">Bar</option>
+                            <option value="carro">Carro</option>
+                            <option value="celular">Celular</option>
+                            <option value="diversao">Diversão</option>
+                            <option value="esportes">Esportes</option>
+                            <option value="fast-food">Fast food</option>
+                            <option value="gasolina">Gasolina</option>
+                            <option value="lanche">Lanche</option>
+                            <option value="presente">Presente</option>
+                            <option value="viagens">Viagens</option>
+                        </select>
+
+                    </div>
                     <div className="input-group__item">
                         <DateRangePicker
                             startDateId="startDateId"
@@ -80,7 +102,8 @@ const mapDispatchToProps = (dispatch) => ({
     setEndDate: (endDate) => dispatch(setEndDate(endDate)),
     setTextFilter: (text) => dispatch(setTextFilter(text)),
     sortByDate: () => dispatch(sortByDate()),
-    sortByAmount: () => dispatch(sortByAmount())
+    sortByAmount: () => dispatch(sortByAmount()),
+    setCategoryFilter: (category) => dispatch(setCategoryFilter(category))
 });
 
 

@@ -5,6 +5,12 @@ export const setTextFilter = (text = '') => ({
 
 });
 
+// SET_CATEGORY_FILTER
+export const setCategoryFilter = (category='')=>({
+    type: 'SET_CATEGORY_FILTER',
+    category
+});
+
 
 
 //SORT_BY_DATE

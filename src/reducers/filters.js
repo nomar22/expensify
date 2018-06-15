@@ -15,6 +15,11 @@ export default (state = filtersReducerDefaultState, action) => {
                 text: action.text
 
             };
+        case 'SET_CATEGORY_FILTER':
+            return{
+                ...state,
+                category:action.category
+            }
 
         case 'SORT_BY_DATE':
             return {
