@@ -20,6 +20,11 @@ exports[`Should render ExpenseList with empty message 1`] = `
     <div
       className="show-for-desktop"
     >
+       Category
+    </div>
+    <div
+      className="show-for-desktop"
+    >
        Amount
     </div>
   </div>
@@ -53,6 +58,11 @@ exports[`Should render expenseList with expenses 1`] = `
       className="show-for-desktop"
     >
        Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+       Category
     </div>
     <div
       className="show-for-desktop"

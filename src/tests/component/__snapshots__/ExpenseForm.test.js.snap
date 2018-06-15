@@ -130,13 +130,86 @@ exports[`Should render ExpenseForm with expense data 1`] = `
     type="text"
     value="gun"
   />
-  <input
+  <CurrencyInput
+    allowNegative={false}
+    autoFocus={false}
     className="text-input"
+    decimalSeparator="."
+    inputType="text"
     onChange={[Function]}
-    placeholder="Amount"
-    type="text"
+    onChangeEvent={[Function]}
+    precision="2"
+    prefix="U$ "
+    selectAllOnFocus={false}
+    suffix=""
+    thousandSeparator=","
     value="1.5"
   />
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Category
+    </option>
+    <option
+      value="almoco"
+    >
+      Almoço
+    </option>
+    <option
+      value="bar"
+    >
+      Bar
+    </option>
+    <option
+      value="carro"
+    >
+      Carro
+    </option>
+    <option
+      value="celular"
+    >
+      Celular
+    </option>
+    <option
+      value="diversao"
+    >
+      Diversão
+    </option>
+    <option
+      value="esportes"
+    >
+      Esportes
+    </option>
+    <option
+      value="fast-food"
+    >
+      Fast food
+    </option>
+    <option
+      value="gasolina"
+    >
+      Gasolina
+    </option>
+    <option
+      value="lanche"
+    >
+      Lanche
+    </option>
+    <option
+      value="presente"
+    >
+      Presente
+    </option>
+    <option
+      value="viagens"
+    >
+      Viagens
+    </option>
+  </select>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     block={false}
@@ -247,13 +320,86 @@ exports[`Should render default ExpenseForm correctly 1`] = `
     type="text"
     value=""
   />
-  <input
+  <CurrencyInput
+    allowNegative={false}
+    autoFocus={false}
     className="text-input"
+    decimalSeparator="."
+    inputType="text"
     onChange={[Function]}
-    placeholder="Amount"
-    type="text"
+    onChangeEvent={[Function]}
+    precision="2"
+    prefix="U$ "
+    selectAllOnFocus={false}
+    suffix=""
+    thousandSeparator=","
     value=""
   />
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Category
+    </option>
+    <option
+      value="almoco"
+    >
+      Almoço
+    </option>
+    <option
+      value="bar"
+    >
+      Bar
+    </option>
+    <option
+      value="carro"
+    >
+      Carro
+    </option>
+    <option
+      value="celular"
+    >
+      Celular
+    </option>
+    <option
+      value="diversao"
+    >
+      Diversão
+    </option>
+    <option
+      value="esportes"
+    >
+      Esportes
+    </option>
+    <option
+      value="fast-food"
+    >
+      Fast food
+    </option>
+    <option
+      value="gasolina"
+    >
+      Gasolina
+    </option>
+    <option
+      value="lanche"
+    >
+      Lanche
+    </option>
+    <option
+      value="presente"
+    >
+      Presente
+    </option>
+    <option
+      value="viagens"
+    >
+      Viagens
+    </option>
+  </select>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     block={false}
@@ -364,13 +510,86 @@ exports[`Should set note textChange 1`] = `
     type="text"
     value=""
   />
-  <input
+  <CurrencyInput
+    allowNegative={false}
+    autoFocus={false}
     className="text-input"
+    decimalSeparator="."
+    inputType="text"
     onChange={[Function]}
-    placeholder="Amount"
-    type="text"
+    onChangeEvent={[Function]}
+    precision="2"
+    prefix="U$ "
+    selectAllOnFocus={false}
+    suffix=""
+    thousandSeparator=","
     value=""
   />
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Category
+    </option>
+    <option
+      value="almoco"
+    >
+      Almoço
+    </option>
+    <option
+      value="bar"
+    >
+      Bar
+    </option>
+    <option
+      value="carro"
+    >
+      Carro
+    </option>
+    <option
+      value="celular"
+    >
+      Celular
+    </option>
+    <option
+      value="diversao"
+    >
+      Diversão
+    </option>
+    <option
+      value="esportes"
+    >
+      Esportes
+    </option>
+    <option
+      value="fast-food"
+    >
+      Fast food
+    </option>
+    <option
+      value="gasolina"
+    >
+      Gasolina
+    </option>
+    <option
+      value="lanche"
+    >
+      Lanche
+    </option>
+    <option
+      value="presente"
+    >
+      Presente
+    </option>
+    <option
+      value="viagens"
+    >
+      Viagens
+    </option>
+  </select>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     block={false}
@@ -598,7 +817,7 @@ exports[`should render error for invalid form submission 1`] = `
       }
     }
   >
-    Please Provide description and amount
+    Please Provide description, amount and category
      
   </p>
   <input
@@ -609,13 +828,86 @@ exports[`should render error for invalid form submission 1`] = `
     type="text"
     value=""
   />
-  <input
+  <CurrencyInput
+    allowNegative={false}
+    autoFocus={false}
     className="text-input"
+    decimalSeparator="."
+    inputType="text"
     onChange={[Function]}
-    placeholder="Amount"
-    type="text"
+    onChangeEvent={[Function]}
+    precision="2"
+    prefix="U$ "
+    selectAllOnFocus={false}
+    suffix=""
+    thousandSeparator=","
     value=""
   />
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Category
+    </option>
+    <option
+      value="almoco"
+    >
+      Almoço
+    </option>
+    <option
+      value="bar"
+    >
+      Bar
+    </option>
+    <option
+      value="carro"
+    >
+      Carro
+    </option>
+    <option
+      value="celular"
+    >
+      Celular
+    </option>
+    <option
+      value="diversao"
+    >
+      Diversão
+    </option>
+    <option
+      value="esportes"
+    >
+      Esportes
+    </option>
+    <option
+      value="fast-food"
+    >
+      Fast food
+    </option>
+    <option
+      value="gasolina"
+    >
+      Gasolina
+    </option>
+    <option
+      value="lanche"
+    >
+      Lanche
+    </option>
+    <option
+      value="presente"
+    >
+      Presente
+    </option>
+    <option
+      value="viagens"
+    >
+      Viagens
+    </option>
+  </select>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     block={false}
@@ -726,13 +1018,86 @@ exports[`should set descritpion on input change 1`] = `
     type="text"
     value="New Description"
   />
-  <input
+  <CurrencyInput
+    allowNegative={false}
+    autoFocus={false}
     className="text-input"
+    decimalSeparator="."
+    inputType="text"
     onChange={[Function]}
-    placeholder="Amount"
-    type="text"
+    onChangeEvent={[Function]}
+    precision="2"
+    prefix="U$ "
+    selectAllOnFocus={false}
+    suffix=""
+    thousandSeparator=","
     value=""
   />
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Category
+    </option>
+    <option
+      value="almoco"
+    >
+      Almoço
+    </option>
+    <option
+      value="bar"
+    >
+      Bar
+    </option>
+    <option
+      value="carro"
+    >
+      Carro
+    </option>
+    <option
+      value="celular"
+    >
+      Celular
+    </option>
+    <option
+      value="diversao"
+    >
+      Diversão
+    </option>
+    <option
+      value="esportes"
+    >
+      Esportes
+    </option>
+    <option
+      value="fast-food"
+    >
+      Fast food
+    </option>
+    <option
+      value="gasolina"
+    >
+      Gasolina
+    </option>
+    <option
+      value="lanche"
+    >
+      Lanche
+    </option>
+    <option
+      value="presente"
+    >
+      Presente
+    </option>
+    <option
+      value="viagens"
+    >
+      Viagens
+    </option>
+  </select>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     block={false}

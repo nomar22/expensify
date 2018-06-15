@@ -40,6 +40,75 @@ exports[`Should render ExpenseListFilter correctly 1`] = `
     <div
       className="input-group__item"
     >
+      <select
+        className="select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Category
+        </option>
+        <option
+          value="almoco"
+        >
+          Almoço
+        </option>
+        <option
+          value="bar"
+        >
+          Bar
+        </option>
+        <option
+          value="carro"
+        >
+          Carro
+        </option>
+        <option
+          value="celular"
+        >
+          Celular
+        </option>
+        <option
+          value="diversao"
+        >
+          Diversão
+        </option>
+        <option
+          value="esportes"
+        >
+          Esportes
+        </option>
+        <option
+          value="fast-food"
+        >
+          Fast food
+        </option>
+        <option
+          value="gasolina"
+        >
+          Gasolina
+        </option>
+        <option
+          value="lanche"
+        >
+          Lanche
+        </option>
+        <option
+          value="presente"
+        >
+          Presente
+        </option>
+        <option
+          value="viagens"
+        >
+          Viagens
+        </option>
+      </select>
+    </div>
+    <div
+      className="input-group__item"
+    >
       <withStyles(DateRangePicker)
         anchorDirection="left"
         block={false}
@@ -167,6 +236,75 @@ exports[`Should render ExpenseListFilter with alt data correctly 1`] = `
           value="amount"
         >
           Amount
+        </option>
+      </select>
+    </div>
+    <div
+      className="input-group__item"
+    >
+      <select
+        className="select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Category
+        </option>
+        <option
+          value="almoco"
+        >
+          Almoço
+        </option>
+        <option
+          value="bar"
+        >
+          Bar
+        </option>
+        <option
+          value="carro"
+        >
+          Carro
+        </option>
+        <option
+          value="celular"
+        >
+          Celular
+        </option>
+        <option
+          value="diversao"
+        >
+          Diversão
+        </option>
+        <option
+          value="esportes"
+        >
+          Esportes
+        </option>
+        <option
+          value="fast-food"
+        >
+          Fast food
+        </option>
+        <option
+          value="gasolina"
+        >
+          Gasolina
+        </option>
+        <option
+          value="lanche"
+        >
+          Lanche
+        </option>
+        <option
+          value="presente"
+        >
+          Presente
+        </option>
+        <option
+          value="viagens"
+        >
+          Viagens
         </option>
       </select>
     </div>
