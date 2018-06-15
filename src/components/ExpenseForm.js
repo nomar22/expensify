@@ -43,6 +43,7 @@ class ExpenseForm extends React.Component {
         this.setState({ note });
     };
     onAmountChange = (e, maskedvalue, floatvalue) => {
+        console.log('amount');
         this.setState({ amount: floatvalue });
     }
 
@@ -90,6 +91,7 @@ class ExpenseForm extends React.Component {
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
                     autoFocus />
+                    
 
                 <CurrencyInput
                     className="text-input"
