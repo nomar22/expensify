@@ -1,8 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< HEAD
-exports[`Should render EditExpense correctly 1`] = `undefined`;
-=======
 exports[`Should render EditExpense correctly 1`] = `
 <div>
   <div
@@ -66,4 +63,3 @@ exports[`Should render EditExpense correctly 1`] = `
   </Modal>
 </div>
 `;
->>>>>>> create_category

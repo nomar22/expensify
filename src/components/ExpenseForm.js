@@ -90,6 +90,7 @@ class ExpenseForm extends React.Component {
                     placeholder="Description"
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
+                    maxLength={15}
                     autoFocus />
                     
 
