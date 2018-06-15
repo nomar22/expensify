@@ -37,7 +37,7 @@ test('Should render edit', () => {
 });
 
 test('Should render remove', () => {
-    wrapper.find('button').simulate('click');
+    wrapper.find('button').at(1).simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/dashboard');
     expect(startRemoveExpense).toHaveBeenLastCalledWith({id:expenses[1].id})
 });

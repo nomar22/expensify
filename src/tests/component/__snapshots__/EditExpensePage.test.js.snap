@@ -39,5 +39,27 @@ exports[`Should render EditExpense correctly 1`] = `
       </button>
     </div>
   </div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    className="modal"
+    closeTimeoutMS={0}
+    isOpen={false}
+    onRequestClose={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+  >
+    <h2>
+      Delete this item?
+    </h2>
+    <button
+      className="button-layout"
+      onClick={[Function]}
+    >
+      OK
+    </button>
+  </Modal>
 </div>
 `;

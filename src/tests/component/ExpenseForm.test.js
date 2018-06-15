@@ -3,6 +3,7 @@ import {shallow} from 'enzyme';
 import ExpenseForm from '../../components/ExpenseForm';
 import expenses from '../fixtures/expenses'
 import moment from 'moment';
+import CurrencyInput from 'react-currency-input';
 
 test('Should render default ExpenseForm correctly',()=>{
     const wrapper = shallow(<ExpenseForm />);
@@ -49,31 +50,6 @@ test('Should set note textChange', ()=>{
 
 });
 
-test('Should set valid amount', ()=>{
-    const value = "55.30";
-    const wrapper = shallow(<ExpenseForm />);
-
-    wrapper.find('input').at(1).simulate('change',{
-        target:{value}
-    });
-
-    expect(wrapper.state('amount')).toBe(value);
-    expect(wrapper).toMatchSnapshot();
-
-});
-
-test('Should reject invalid amount', ()=>{
-    const value = "55.3030";
-    const wrapper = shallow(<ExpenseForm />);
-
-    wrapper.find('input').at(1).simulate('change',{
-        target:{value}
-    });
-
-    expect(wrapper.state('amount')).toBe(""); 
-    expect(wrapper).toMatchSnapshot();
-
-});
 
 test('Should call onSubmit prop for valid submissions',()=>{
     const onSubmitSpy = jest.fn();
