@@ -5,15 +5,16 @@ export default (expenses) => {
 
     let result = [];
 
-
     expenses.reduce((res, expense) => {
+        if(!res){
+            res = [];
+        }
         const createdAtMoment = moment(expense.createdAt);
         let month = createdAtMoment.month() + 1;
         let year = createdAtMoment.year();
-
         if (!res[month]) {
             res[month] = {
-                id: createdAtMoment,
+                id: year+"_"+month,
                 month: createdAtMoment.format('MMMM - YYYY'),
                 amount: 0
 
@@ -24,6 +25,7 @@ export default (expenses) => {
         return res;
 
 
-    });
+    },undefined);
+    // console.log(result);
     return result;
 };

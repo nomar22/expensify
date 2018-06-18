@@ -1,9 +1,9 @@
 import React from 'react';
 import MonthList from './MonthList';
-import ExpensesSumary from './ExpensesSumary';
+import MonthSumary from './MonthSumary';
 const ExpenseDashBoardPage = () => (
     <div >
-        <ExpensesSumary  />
+        <MonthSumary  />
         <MonthList />
     </div>
 );

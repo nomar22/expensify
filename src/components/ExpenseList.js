@@ -13,7 +13,7 @@ export const ExpenseList = (props) => (
             <div className="show-for-desktop"> Category</div>
             <div className="show-for-desktop"> Amount</div>
         </div>
-        <div className="list-table">
+        <div className="list-table--3columns">
             {
                 props.expenses.length === 0 ?
                     (

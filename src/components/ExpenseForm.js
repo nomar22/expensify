@@ -102,17 +102,16 @@ class ExpenseForm extends React.Component {
 
                 <select className="select" value={this.state.category} onChange={this.onCategoryChange}>
                     <option value=""  >Category</option>
-                    <option value="almoco">Almoço</option>
+                    <option value="almoco">Lunch</option>
                     <option value="bar">Bar</option>
-                    <option value="carro">Carro</option>
-                    <option value="celular">Celular</option>
-                    <option value="diversao">Diversão</option>
-                    <option value="esportes">Esportes</option>
+                    <option value="carro">Car</option>
+                    <option value="celular">Smartphone</option>
+                    <option value="diversao">Funny</option>
+                    <option value="esportes">Sports</option>
                     <option value="fast-food">Fast food</option>
-                    <option value="gasolina">Gasolina</option>
-                    <option value="lanche">Lanche</option>
-                    <option value="presente">Presente</option>
-                    <option value="viagens">Viagens</option>
+                    <option value="gasolina">Fuel</option>
+                    <option value="presente">Gifts</option>
+                    <option value="viagens">Trips</option>
                 </select>
 
                 <SingleDatePicker
