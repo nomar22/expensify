@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import database from '../firebase/firebase'
 //Component call action generator
 // action generagtor returns object

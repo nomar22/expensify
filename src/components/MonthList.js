@@ -1,30 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem'
-import selectExpenses from '../selectors/expenses';
+import selectMonths from '../selectors/months';
+import { MonthListItem } from './MonthListItem';
 
 
 export const ExpenseList = (props) => (
 
     <div className="content-container">
         <div className="list-header">
-            <div className="show-for-mobile">Expenses</div>
-            <div className="show-for-desktop"> Expense</div>
-            <div className="show-for-desktop"> Category</div>
-            <div className="show-for-desktop"> Amount</div>
+            <div className="show-for-mobile">Month</div>
+            <div className="show-for-desktop"> Month</div>
+            <div className="show-for-desktop"> Sum</div>
         </div>
-        <div className="list-table--3columns">
+        <div className="list-table">
             {
-                props.expenses.length === 0 ?
+                props.months.length === 0 ?
                     (
                         <div className="list-item list-item--message">
                             <span>  No expenses </span>
                         </div>
 
                     ) :
-                    (
-                        props.expenses.map((expense) => (
-                            <ExpenseListItem key={expense.id} {...expense}
+                    ( 
+                        props.months.map((month) => (
+                            <MonthListItem key={month.id} {...month}
                             />
                         ))
                     )
@@ -36,7 +36,7 @@ export const ExpenseList = (props) => (
 const mapStateToProps = (state) => {
     return {
 
-        expenses: selectExpenses(state.expenses, state.filters)
+        months: selectMonths(state.expenses, state.filters)
     };
 };
 

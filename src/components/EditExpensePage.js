@@ -9,7 +9,6 @@ import Modal from 'react-modal';
 export class EditExpensePage extends React.Component {
 
     constructor(props) {
-        // Modal.setAppElement('#app');
         super(props);
         this.state = {
            modalIsOpen:false
