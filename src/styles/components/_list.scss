@@ -17,8 +17,9 @@
     border: 1px solid darken($off-white, 7%);
     border-top: none;
     color: $dark-grey;
+    grid-template-columns: 44% 26% 30%;
     text-decoration: none;
-    display:flex;
+    display:grid;
     flex-direction: column;
     padding: $s-size;
     transition: background .3s ease;
@@ -56,4 +57,7 @@
         margin:0;
         padding-left: $s-size;
     }
+}
+.value{
+    text-align: right;
 }
