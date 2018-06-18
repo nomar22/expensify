@@ -14,11 +14,11 @@ class MonthDashbBoardPage extends React.Component {
 
     constructor(props) {
         super(props);
-        let resolveYearMonth = ()=>{
-            if (yearMonth.length == 6) {
-                        yearMonth = yearMonth.replace("_", 0);
-                    }
-                    return yearMonth + "01";
+        let resolveYearMonth = () => {
+            if (yearMonth.length == 5) {
+                yearMonth = yearMonth.slice(0, 4) + "0" + yearMonth.slice(4, 5);
+            }
+            return yearMonth + "01";
         };
         let yearMonth = props.match.params.yearMonth;
         let oneDate = moment(resolveYearMonth(yearMonth));
