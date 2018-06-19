@@ -13,9 +13,14 @@
         margin-bottom: $s-size;
     }
 }
+.list-table--3columns {
+    @extend .list-table;
+}
 .list-table--3columns .list-item{
-    grid-template-columns: 44% 26% 30%;
-    display:grid;
+    @media (min-width:$desktop-breakpoint) {
+        grid-template-columns: 44% 26% 30%;
+        display:grid;
+    }
     
 }
 .list-item{
