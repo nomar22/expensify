@@ -15,13 +15,8 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Cofee', amount: 300
 
 // store.dispatch(removeExpense({ id: expenseTwo.expense.id }));
 // store.dispatch(editExpense(expenseOne.expense.id, { amount: 500 }))
-<<<<<<< HEAD
 store.dispatch(setTextFilter('e'));
 store.dispatch(setTextFilter(''));
-=======
-// store.dispatch(setTextFilter('CoFee'));
-// store.dispatch(setTextFilter(''));
->>>>>>> 8c3f0b738380ed588ba7973a6bf3a2fa1861b3a6
 
 store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());

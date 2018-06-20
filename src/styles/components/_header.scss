@@ -8,8 +8,24 @@
     h1{
         margin:0;
     }
-}
 
+}
+.header_userData{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+
+    h4{
+        margin:0;
+        padding-top: 38px;
+        padding-right: 15px;
+    }
+    img{
+        width:11%;
+        height:11%;
+    }
+}
 .header__content{
     display: flex;
     justify-content: space-between;
