@@ -16,14 +16,15 @@
     display: flex;
     justify-content: flex-end;
 
-    h4{
-        margin:0;
-        padding-top: 38px;
-        padding-right: 15px;
+    span{
+        font-size:$font-size-small;
+        padding-top: 17px;
+        padding-right: 9px;
     }
     img{
-        width:11%;
-        height:11%;
+        width:7%;
+        height:7%;
+        border-radius: 50%;
     }
 }
 .header__content{
