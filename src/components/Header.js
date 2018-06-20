@@ -16,8 +16,8 @@ export const Header = ({ startLogout, userImg, userName }) => (
                 </Link>
                 <div className="header_userData">
                     <img src={userImg} />
+                    <button className="button-layout button-layout--link" onClick={startLogout}> Logout</button>
                 </div>
-                <button className="button-layout button-layout--link" onClick={startLogout}> Logout</button>
             </div>
         </div>
     </header>
