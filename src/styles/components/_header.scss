@@ -15,11 +15,16 @@
     text-decoration: none;
     display: flex;
     justify-content: flex-end;
-    padding-left: 68%;
+    padding-left: 45%;
+    @media (min-width:$desktop-breakpoint) {
+        margin: 0 $s-size 0 0 ;
+        padding-left: 68%;
+    }
     img{
         width:4rem;
         height:4rem;
         border-radius: 50%;
+        
     }
 }
 .header__content{
