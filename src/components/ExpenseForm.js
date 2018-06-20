@@ -91,7 +91,7 @@ class ExpenseForm extends React.Component {
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
                     maxLength={15}
-                    autoFocus />
+                     />
                     
 
                 <CurrencyInput
