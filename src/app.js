@@ -8,7 +8,9 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
-import LoadingPage from './components/LoadingPage'
+import LoadingPage from './components/LoadingPage';
+import {login, logout} from '../src/actions/auth';
+import {startSetExpenses} from '../src/actions/expenses';
 const store = configureStore();
 
 

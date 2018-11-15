@@ -8,7 +8,9 @@ export const login = (uid, displayName, photoUrl) => ({
 });
 export const startLogin = () => {
     return () => {
-        return firebase.auth().signInWithPopup(googleAuthProvider);
+        const loginResult = firebase.auth().signInWithPopup(googleAuthProvider);
+        console.log(loginResult);
+        return loginResult;
     };
 };
 
