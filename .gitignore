@@ -1,5 +1,3 @@
 /node_modules/
 /coverage/
 /public/dist/
-.env.test
-.env.development
